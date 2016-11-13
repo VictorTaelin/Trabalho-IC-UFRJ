@@ -1,3 +1,7 @@
+## Competitive Pokémon Mindgames
+
+Relatório de Inteligência Computacional - Victor Hernandes Silva Maia
+
 ## Introdução
 
 Pokémon é um jogo de estratégia 1-contra-1 baseado em turnos. Ao início de uma partida, cada jogador monta uma equipe de 6 Pokémon (dentre quase 1000 possíveis) e seleciona um destes como "ativo". A cada turno, cada jogador opta, secretamente, por uma dentre duas opções: atacar o Pokémon ativo de seu oponente ou substituir o seu por outro em sua equipe. Alguns ataques causam dano. Um Pokémon é eliminado ao sofrer determinada quantidade de dano. Vence aquele que eliminar todo a equipe adversária.
@@ -143,8 +147,10 @@ Observamos uma forte correlação negativa entre o turno e a quantidade de vida 
 
 ![sc11](images/scatter_matrix_1_1.png)
 
-Além da clara correlação linear entre as variáveis citadas, podemos utilizar essa matriz para ganhar novos insights sobre o dataset. Para isso, utilizamos a cor vermelha para registros da classe que queremos identificar, e ciano para os demais, com valores alfas inversamente proporcionais a probabilidade de se encontrar um registro daquela classe. Deste modo, nesta visualização, pontos predominante vermelhos apontam a existência de um número de registros com a classe desejada acima do esperado, e vice-versa. Podemos fazer algumas obersvações através desse fato. Repare, por exemplo, na variável `a_boost`: claramente jogadores com boosts positivos tem uma tendência muito forte de permanecerem em campo. O oposto, curiosamente, acontece com a vida: quanto mais saudável um Pokémon, maior sua tendência de ser substituido. O formato curioso da relação entre as variávies `party` e `health` reflete o fato de que o somatório dessas é sempre 6. 
+Além da clara correlação linear entre as variáveis citadas, podemos utilizar essa matriz para ganhar novos insights sobre o dataset. Para isso, utilizamos a cor vermelha para registros da classe que queremos identificar, e ciano para os demais, com valores alfas inversamente proporcionais a probabilidade de se encontrar um registro daquela classe. Deste modo, nesta visualização, pontos predominante vermelhos apontam a existência de um número de registros com a classe desejada acima do esperado, e vice-versa. Podemos fazer algumas obersvações através desse fato.
+
+Repare, por exemplo, na variável `a_boost`: claramente jogadores com boosts positivos tem uma tendência muito forte de permanecerem em campo. O oposto, curiosamente, acontece com a vida: quanto mais saudável um Pokémon, maior sua tendência de ser substituido. Interessantemente, o valor do `elo` de um jogador parece influenciar positivamente suas chances de substituir seu Pokémon a qualquer momento. Isso faz sentido pois, de fato, jogadores mais experientes apostam mais em substituições, enquanto jogadores novatos apostam em ataques diretos. O formato curioso da relação entre as variávies `party` e `health` reflete o fato de que o somatório dessas é sempre 6. 
 
 ### Tecnologias utilizadas
 
-Para captação dos dados, foi utilizado JavaScript, Node.js e Superagent. Para análise e visualização dos dados, foi utilizado Python com as libs Pandas, Numpy e matplotlib. Para o plot das matrizes de dispersão, foi necessário modificar o código original tendo em vista que este não suportava o tamanho original da array, e não permitia comparar grupos de atributos diferentes para que se dividisse o mesmo em 4 sub-plots, como feito.
+Para captação dos dados, foi utilizado JavaScript, Node.js e Superagent. Para análise e visualização dos dados, foi utilizado Python com as libs Pandas, Numpy e matplotlib. Para o plot das matrizes de dispersão, foi necessário modificar o código original tendo em vista que este não suportava o tamanho original da array, e não permitia comparar grupos de atributos diferentes para que se dividisse o mesmo em 4 sub-plots, como feito. Todo o código-fonte está disponível no repositório [https://github.com/MaiaVictor/Trabalho-IC-UFRJ/](https://github.com/MaiaVictor/Trabalho-IC-UFRJ/).
